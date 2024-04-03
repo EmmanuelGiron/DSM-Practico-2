@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">DSMDesafioPractico2GC180313MM200149</string>
+    <string-array name="departamentos">
+        <item>Ventas</item>
+        <item>Soporte</item>
+        <item>Administrativo</item>
+    </string-array>
 </resources>
