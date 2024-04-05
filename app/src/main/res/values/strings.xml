@@ -5,4 +5,9 @@
         <item>Soporte</item>
         <item>Administrativo</item>
     </string-array>
+
+    <!-- Item de notas -->
+    <string name="Titulo_Item"> Título </string>
+    <string name="Descripcion_Item"> Descripcion</string>
+    <string name="Departamento_Item"> Departamento </string>
 </resources>

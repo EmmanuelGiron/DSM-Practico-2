@@ -47,7 +47,7 @@ class FrmIngresoTickets : AppCompatActivity(){
                 ticket.opcion = selectedItem.toString()
             }
             override fun onNothingSelected(parent: AdapterView<*>) {
-                // Acción cuando no se ha seleccionado nada
+                // cuando no se ha seleccionado nada
             }
         }
         btnIngresar.setOnClickListener{
