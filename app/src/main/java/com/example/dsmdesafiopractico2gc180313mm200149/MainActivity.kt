@@ -20,6 +20,9 @@ import com.google.firebase.database.ValueEventListener
 
 
 class MainActivity : AppCompatActivity() {
+    //Usuario
+    val usurioActual = "Juan"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -29,6 +32,10 @@ class MainActivity : AppCompatActivity() {
 
         btnIrFrmTicket = findViewById(R.id.btnIrAFormularioIngresarTicket)
         btnMostrar = findViewById(R.id.btnMostrarLista)
+
+        if(usurioActual == "Admin"){
+            btnIrFrmTicket.visibility = View.GONE
+        }
 
         btnIrFrmTicket.setOnClickListener{
             val intent = Intent(this, FrmIngresoTickets::class.java)

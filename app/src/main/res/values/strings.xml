@@ -7,7 +7,16 @@
     </string-array>
 
     <!-- Item de notas -->
+    <string name="Referencia_Item">Referencia</string>
+    <string name="Numero_Item">Nº</string>
     <string name="Titulo_Item"> Título </string>
     <string name="Descripcion_Item"> Descripcion</string>
     <string name="Departamento_Item"> Departamento </string>
+    <string name="Autor_Item"> Autor </string>
+    <string name="Correo_Item"> Correo </string>
+    <string name="Fecha_Creacion_Item">Creación</string>
+    <string name="Estado_Item"> Estado </string>
+    <string name="Fecha_Finalizacion_Item">Finalización</string>
+
+    <string name="back_button_description">Volver atrás</string>
 </resources>

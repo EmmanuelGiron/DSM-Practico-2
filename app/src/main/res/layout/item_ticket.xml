@@ -1,60 +1,235 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <androidx.cardview.widget.CardView
+<androidx.cardview.widget.CardView android:id="@+id/card_view_ticket"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?android:attr/selectableItemBackground"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="340dp"
+    android:layout_margin="12dp"
+    android:padding="4dp"
+    card_view:cardBackGroudColor="#FFFFFF"
+    card_view:cardCornerRadius="20dp"
+    card_view:cardElevation="6dp"
+    card_view:contentPaddind="4dp"
     app:cardUseCompatPadding="true"
-    android:padding="0.2dp"
-    app:cardCornerRadius="10dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="397dp"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="5dp">
+        android:padding="16dp">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
+
+
+        <LinearLayout
+            android:id="@+id/numeroLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="7dp"
-            android:orientation="vertical">
-            <!--titulo del ticket-->
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--Numero del ticket-->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Nº"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/numeroCardID"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/Numero_Item" />
+
+            <!--Estado del ticket-->
+            <TextView
+                android:id="@+id/estadoCardID"
+                android:layout_width="0dp"
+                android:layout_weight="0.7"
+                android:layout_height="wrap_content"
+                android:text="@string/Estado_Item"
+                android:textStyle="bold"
+                android:textColor="#00913f"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tituloLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tituloLayout"
+            android:paddingTop="25dp"
+            android:orientation="horizontal">
+
+            <!--Titulo del ticket-->
             <TextView
                 android:id="@+id/tituloCardID"
                 android:layout_width="match_parent"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="@string/Titulo_Item" />
-
-            <!-- Descripcion del ticket-->
+                android:text="@string/Titulo_Item"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/descripcionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!--Descripcion del ticket-->
             <TextView
                 android:id="@+id/descripcionCardID"
                 android:layout_width="match_parent"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="@string/Descripcion_Item" />
+                android:paddingTop="50dp"
+                android:text="@string/Descripcion_Item"
+                />
+            </LinearLayout>
 
-            <!--Departamento del usario-->
+        <LinearLayout
+            android:id="@+id/informacionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!--info del ticket-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:paddingTop="115dp"
+                android:text="Información general"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/autorLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <!--Departamento del ticket-->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:paddingTop="135dp"
+                android:text="Autor:"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/autorCardID"
+                android:layout_width="2dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/Autor_Item" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/departamentoEstadoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!--Departamento del ticket-->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:paddingTop="160dp"
+                android:text="Departamento:"
+                android:textStyle="bold"/>
             <TextView
                 android:id="@+id/departamentoCardID"
-                android:layout_width="match_parent"
+                android:layout_width="2dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:text="@string/Departamento_Item" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/correoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!--Departamento del ticket-->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:paddingTop="210dp"
+                android:text="Correo:"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/correoCardID"
+                android:layout_width="2dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/Correo_Item" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/fechasLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!--Fecha de creación del ticket-->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:paddingTop="185dp"
+                android:text="Creación:"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/creacionCardID"
+                android:layout_width="2dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/Fecha_Creacion_Item" />
+            <!--Fecha de finalizacion del ticket-->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1.2"
+                android:layout_height="wrap_content"
+                android:text="Finalización:"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/finalizacionCardID"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/Fecha_Finalizacion_Item" />
+        </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/botonesLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="240dp"
+            android:paddingLeft="40dp">
+            <!--Botones-->
             <Button
                 android:id="@+id/btnEditar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Editar" />
-
             <Button
                 android:id="@+id/btnEliminar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:text="Eliminar" />
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-    </androidx.appcompat.widget.LinearLayoutCompat>
+            <Button
+                android:id="@+id/btnFinalizar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Finalizar" />
+            <TextView
+                android:id="@+id/referenciaCardID"
+                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/Referencia_Item" />
+        </LinearLayout>
+    </RelativeLayout>
 </androidx.cardview.widget.CardView>
