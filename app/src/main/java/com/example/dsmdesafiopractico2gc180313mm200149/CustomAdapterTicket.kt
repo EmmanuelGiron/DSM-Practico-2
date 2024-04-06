@@ -22,6 +22,9 @@ import java.util.Calendar
 class CustomAdapterTicket: RecyclerView.Adapter<CustomAdapterTicket.ViewHolder>() {
     //Usuario
     val usurioActual = "Juan"
+    //Trayendo datos de la base
+    val database = FirebaseDatabase.getInstance()
+    val reference = database.getReference("tickets")
 
     //Fecha Actual
     val calendario = Calendar.getInstance()
@@ -30,9 +33,7 @@ class CustomAdapterTicket: RecyclerView.Adapter<CustomAdapterTicket.ViewHolder>(
     val anio = calendario.get(Calendar.YEAR)
     val fechaActual = "$dia/$mes/$anio"
 
-    //Trayendo datos de la base
-    val database = FirebaseDatabase.getInstance()
-    val reference = database.getReference("tickets")
+
 
     var referencias = mutableListOf<String>()
     var numeros = mutableListOf<String>()

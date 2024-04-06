@@ -17,7 +17,9 @@ import java.util.Calendar
 class FrmIngresoTickets : AppCompatActivity(){
     //Usuario
     val usurioActuaal = "Juan"
-    val correoUsuarioActial = "jose@gmail.com"
+    val correoUsuarioActial = "juan@gmail.com"
+    val database = FirebaseDatabase.getInstance()
+    val reference = database.getReference("tickets")
 
 
     //Obteniendo fecha actual
@@ -42,12 +44,6 @@ class FrmIngresoTickets : AppCompatActivity(){
     }
 
     val ticket = Ticket()
-
-    val database = FirebaseDatabase.getInstance()
-    val reference = database.getReference("tickets")
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_formulario_tickets)
