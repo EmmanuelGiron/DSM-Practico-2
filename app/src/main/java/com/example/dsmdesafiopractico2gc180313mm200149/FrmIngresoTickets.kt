@@ -32,7 +32,6 @@ class FrmIngresoTickets : AppCompatActivity(){
 
 
     class Ticket {
-        var numero = ""
         var autor = ""
         var correo = ""
         var titulo = ""
@@ -79,7 +78,6 @@ class FrmIngresoTickets : AppCompatActivity(){
             }
         }
         btnIngresar.setOnClickListener{
-            ticket.numero = "1"
             ticket.autor = usurioActuaal
             ticket.correo = correoUsuarioActial
             ticket.titulo = txtTitulo.text.toString()

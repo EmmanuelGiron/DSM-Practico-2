@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener
 
 class MainActivity : AppCompatActivity() {
     //Usuario
-    val usurioActual = "Juan"
+    val usurioActual = "Admin"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

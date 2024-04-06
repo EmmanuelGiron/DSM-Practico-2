@@ -21,7 +21,7 @@ import java.util.Calendar
 
 class CustomAdapterTicket: RecyclerView.Adapter<CustomAdapterTicket.ViewHolder>() {
     //Usuario
-    val usurioActual = "Juan"
+    val usurioActual = "Admin"
     //Trayendo datos de la base
     val database = FirebaseDatabase.getInstance()
     val reference = database.getReference("tickets")
@@ -86,13 +86,14 @@ class CustomAdapterTicket: RecyclerView.Adapter<CustomAdapterTicket.ViewHolder>(
     fun obteniendoDatos(nombreActual:String) {
         reference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
+                var contador = 1
                 for (snapshot in dataSnapshot.children) {
                     val ticket = snapshot.getValue(ticket::class.java)
                     val childKey = snapshot.key
                     if(nombreActual != "Admin"){
                         if (ticket != null && nombreActual == ticket.autor.toString()) {
                             referencias.add(childKey.toString())
-                            numeros.add(ticket.numero.toString())
+                            numeros.add(contador.toString())
                             autores.add(ticket.autor.toString())
                             correos.add(ticket.correo.toString())
                             titulos.add(ticket.titulo.toString())
@@ -101,11 +102,12 @@ class CustomAdapterTicket: RecyclerView.Adapter<CustomAdapterTicket.ViewHolder>(
                             fechasCreacion.add(ticket.fechaCreacion.toString())
                             fechasFinaliacion.add(ticket.fechaFinalizacion.toString())
                             estados.add(ticket.estado.toString())
+                            contador = contador +1
                         }
                     } else {
                         if (ticket != null) {
                             referencias.add(childKey.toString())
-                            numeros.add(ticket.numero.toString())
+                            numeros.add(contador.toString())
                             autores.add(ticket.autor.toString())
                             correos.add(ticket.correo.toString())
                             titulos.add(ticket.titulo.toString())
@@ -114,8 +116,10 @@ class CustomAdapterTicket: RecyclerView.Adapter<CustomAdapterTicket.ViewHolder>(
                             fechasCreacion.add(ticket.fechaCreacion.toString())
                             fechasFinaliacion.add(ticket.fechaFinalizacion.toString())
                             estados.add(ticket.estado.toString())
+                            contador = contador +1
                         }
                     }
+
                 }
                 notifyDataSetChanged()
             }
